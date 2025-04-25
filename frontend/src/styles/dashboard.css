@@ -1,0 +1,141 @@
+/* Gradient Background */
+.dashboard-container {
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f0f4ff, #e0e7ff);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header Section */
+.header-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.banner {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Stats Cards */
+.stats-row {
+  margin-bottom: 2rem;
+}
+
+.stats-card {
+  background: white;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-icon {
+  font-size: 1.7rem;
+  margin-right: 10px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-top: 10px;
+}
+
+/* Glowing Table */
+.glowing-table {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+  margin-bottom: 2rem;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table-header h5 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.modern-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.modern-table thead {
+  background: #e0e7ff;
+}
+
+.modern-table th,
+.modern-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.modern-table tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* Quick Actions */
+.quick-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.action-button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  background: linear-gradient(to right, #8b5cf6, #6366f1);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+  transform: translateY(-3px);
+}
+ 

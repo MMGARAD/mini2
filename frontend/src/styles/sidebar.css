@@ -1,0 +1,125 @@
+/* sidebar.css */
+/* === Sidebar Wrapper === */
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: white;
+  overflow: hidden; /* ✅ hides overflowing content */
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.sidebar.open {
+  width: 250px;
+  padding: 20px 0;
+}
+
+.sidebar.collapsed {
+  width: 0;      /* ✅ fully collapse */
+  padding: 0 !important;
+}
+
+/* === Logo / Title === */
+.sidebar h4 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* === Navigation Links === */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar .nav-link {
+  display: block;
+  color: #cfd8dc;
+  padding: 12px 20px;
+  margin: 2px 0;
+  text-decoration: none;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease-in-out;
+  font-size: 15px;
+  text-align: left; /* Align text to the left for buttons as well */
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #4dd0e1; /* Default blue hover */
+  color: #fff;
+}
+
+/* === Logout Button Styling === */
+.sidebar .logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block; /* Make it behave like a block-level element */
+  width: 100%; /* Take full width */
+  text-align: left; /* Ensure text is aligned to the left */
+  color: #cfd8dc;
+  padding: 12px 20px;
+  margin: 2px 0;
+  font-size: 15px;
+  text-decoration: none; /* Remove default button underline */
+  border-left: 4px solid transparent; /* Add the left border */
+  transition: all 0.2s ease-in-out; /* Add transition for hover effect */
+}
+
+.sidebar .logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Same background as other hover */
+  border-left: 4px solid #4dd0e1; /* Same border color as other hover */
+  color: #fff;
+}
+
+/* === Toggle Button === */
+.toggle-btn {
+  position: fixed;
+  top: 15px;
+  left: 260px;
+  z-index: 1000;
+  transition: left 0.3s ease;
+  padding: 6px 10px;
+  font-size: 18px;
+  background-color: #ffffff;  /* ✅ white background */
+  color: #000000;        /* ✅ black icon color */
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.collapsed ~ .toggle-btn {
+  left: 10px;
+}
+
+/* === Logout Confirmation Styling === */
+.logout-confirmation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1001; /* Ensure it's above the sidebar */
+  text-align: center;
+}
+
+.logout-confirmation p {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.logout-confirmation button {
+  margin: 0 5px;
+}

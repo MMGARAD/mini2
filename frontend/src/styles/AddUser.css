@@ -1,0 +1,159 @@
+/* ===== Card/Container Background Color (inside only) ===== */
+.add-user-container {
+  display: flex;
+  justify-content: center;
+}
+
+.add-user-container .auth-box {
+  background-color: #f4f9ff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  width: 600px;
+  margin: 20px;
+}
+
+/* ===== User Management Heading ===== */
+.auth-title {
+  font-size: 28px;
+  font-weight: 700;
+  font-style: italic;
+  color: #2d2f35;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ===== Show Users Button with Modern Color ===== */
+.btn-secondary {
+  background: linear-gradient(to right, #00b09b, #96c93d) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 8px 18px !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(to right, #019c89, #84b630) !important;
+  transform: scale(1.03);
+}
+
+/* ===== Password Input with Eye Icon Styling ===== */
+.password-input-group {
+  position: relative;
+}
+
+.password-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-input-wrapper > .form-control {
+  padding-right: 45px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.password-toggle-button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* ===== Add User Button with Same Gradient ===== */
+.auth-button {
+  background: linear-gradient(to right, #00b09b, #96c93d) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 10px 24px !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  width: 250px;
+}
+
+.auth-button:hover {
+  background: linear-gradient(to right, #019c89, #84b630) !important;
+  transform: scale(1.03);
+}
+
+/* ===== Styling for the User List ===== */
+.user-list {
+  padding: 20px;
+}
+
+.user-list h4 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.user-list-subtitle {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.user-list .table {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.user-list .table th {
+  background-color: #f8f9fa;
+  font-weight: 500;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+}
+
+.user-list .table td {
+  color: #444;
+}
+
+.user-list .d-flex {
+  margin-bottom: 15px;
+}
+
+/* ===== Style for the Show Users button to match Add User width ===== */
+.auth-button-secondary {
+  background: linear-gradient(to right, #00b09b, #96c93d) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 10px 24px !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  width: 250px;
+}
+
+.auth-button-secondary:hover {
+  background: linear-gradient(to right, #019c89, #84b630) !important;
+  transform: scale(1.03);
+}
+
+/* ===== Increase width for the user list view ===== */
+.auth-box.show-users-view {
+  width: 800px;
+}
