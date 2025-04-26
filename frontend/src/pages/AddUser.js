@@ -19,7 +19,7 @@ const AddUser = () => {
   const fetchUsers = useCallback(async () => {
     try {
       const response = await axios.get('http://localhost:5000/api/users/list');
-      setUsers(response.data.users); // Fixed data structure access
+      setUsers(response.data.users);
       setDeleteSuccessMessage('');
       setDeleteErrorMessage('');
       setSelectedUsers([]);
@@ -37,10 +37,7 @@ const AddUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/users/add', {
-        email,
-        password,
-      });
+      await axios.post('http://localhost:5000/api/users/add', { email, password });
       setSuccess(true);
       setError('');
       setEmail('');
@@ -76,7 +73,7 @@ const AddUser = () => {
       );
       setDeleteSuccessMessage(`${selectedUsers.length} user(s) deleted successfully`);
       await fetchUsers();
-      setSelectedUsers([]); // Clear selection after delete
+      setSelectedUsers([]);
     } catch (err) {
       setDeleteErrorMessage(err.response?.data?.error || 'Failed to delete selected users');
     }
@@ -114,36 +111,38 @@ const AddUser = () => {
               </Button>
             </div>
 
-            <Table responsive bordered hover>
-              <thead>
-                <tr>
-                  <th style={{ width: '50px' }}>Select</th>
-                  <th>Email</th>
-                  <th>Created At</th>
-                </tr>
-              </thead>
-              <tbody>
-                {users.length > 0 ? (
-                  users.map(user => (
-                    <tr key={user._id}>
-                      <td>
-                        <Form.Check
-                          type="checkbox"
-                          checked={selectedUsers.includes(user._id)}
-                          onChange={() => handleCheckboxChange(user._id)}
-                        />
-                      </td>
-                      <td>{user.email}</td>
-                      <td>{new Date(user.createdAt).toLocaleDateString()}</td>
-                    </tr>
-                  ))
-                ) : (
+            <div style={{ overflowX: 'auto' }}>
+              <Table bordered hover className="w-100">
+                <thead>
                   <tr>
-                    <td colSpan="3" className="text-center">No users found.</td>
+                    <th style={{ width: '50px' }}>Select</th>
+                    <th>Email</th>
+                    <th>Created At</th>
                   </tr>
-                )}
-              </tbody>
-            </Table>
+                </thead>
+                <tbody>
+                  {users.length > 0 ? (
+                    users.map(user => (
+                      <tr key={user._id}>
+                        <td>
+                          <Form.Check
+                            type="checkbox"
+                            checked={selectedUsers.includes(user._id)}
+                            onChange={() => handleCheckboxChange(user._id)}
+                          />
+                        </td>
+                        <td>{user.email}</td>
+                        <td>{new Date(user.createdAt).toLocaleDateString()}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="3" className="text-center">No users found.</td>
+                    </tr>
+                  )}
+                </tbody>
+              </Table>
+            </div>
           </div>
         ) : (
           <>

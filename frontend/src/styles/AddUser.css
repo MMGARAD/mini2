@@ -1,49 +1,94 @@
-/* ===== Card/Container Background Color (inside only) ===== */
+/* addUser.css */
 .add-user-container {
   display: flex;
   justify-content: center;
-}
-
-.add-user-container .auth-box {
-  background-color: #f4f9ff;
   padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  width: 600px;
-  margin: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
 }
 
-/* ===== User Management Heading ===== */
-.auth-title {
-  font-size: 28px;
-  font-weight: 700;
-  font-style: italic;
-  color: #2d2f35;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* ===== Show Users Button with Modern Color ===== */
-.btn-secondary {
-  background: linear-gradient(to right, #00b09b, #96c93d) !important;
-  border: none !important;
-  border-radius: 12px !important;
-  padding: 8px 18px !important;
-  color: #fff !important;
-  font-weight: 600;
-  font-size: 14px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.auth-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 900px;
+  max-width: 800px;
   transition: all 0.3s ease-in-out;
 }
 
-.btn-secondary:hover {
-  background: linear-gradient(to right, #019c89, #84b630) !important;
-  transform: scale(1.03);
+.auth-title {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  color: #343a40;
 }
 
-/* ===== Password Input with Eye Icon Styling ===== */
-.password-input-group {
+.auth-input-group {
+  margin-bottom: 20px;
+}
+
+.auth-input-group .form-control {
+  width: 380px;
+  height: 40px;
+  padding: 14px 18px;
+  font-size: 17px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.auth-input-group .form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Unified button styles */
+.auth-button,
+.auth-button-secondary {
+  width: 200px;
+  padding: 10px 20px;
+  font-size: 17px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #00ffff, #00ff00);
+  color: white;
   position: relative;
+  overflow: hidden;
+}
+
+/* Brightness overlay */
+.auth-button::after,
+.auth-button-secondary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  transition: background 0.3s ease;
+}
+
+/* Hover effect - brightness increase */
+.auth-button:hover::after,
+.auth-button-secondary:hover::after {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Hover states */
+.auth-button:hover,
+.auth-button-secondary:hover {
+  transform: translateY(-1px);
+  background-image: linear-gradient(to right, #00ffff, #00ff00);
 }
 
 .password-input-wrapper {
@@ -52,108 +97,51 @@
   position: relative;
 }
 
-.password-input-wrapper > .form-control {
-  padding-right: 45px;
-  height: 40px;
-  border-radius: 8px;
-}
-
 .password-toggle-button {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
   background: none;
   border: none;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
-  opacity: 0.7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
   padding: 0;
-  font-size: 18px;
-  color: #333;
+  font-size: 20px;
+  color: #495057;
 }
 
-/* ===== Add User Button with Same Gradient ===== */
-.auth-button {
-  background: linear-gradient(to right, #00b09b, #96c93d) !important;
-  border: none !important;
-  border-radius: 12px !important;
-  padding: 10px 24px !important;
-  color: #fff !important;
-  font-weight: 600;
-  font-size: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-  width: 250px;
-}
-
-.auth-button:hover {
-  background: linear-gradient(to right, #019c89, #84b630) !important;
-  transform: scale(1.03);
-}
-
-/* ===== Styling for the User List ===== */
-.user-list {
-  padding: 20px;
-}
-
-.user-list h4 {
-  font-size: 22px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.user-list-subtitle {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-
+/* Table styles */
 .user-list .table {
-  margin-bottom: 20px;
-  width: 100%;
+  min-width: 800px;
 }
 
-.user-list .table th {
-  background-color: #f8f9fa;
-  font-weight: 500;
-  color: #555;
-  border-bottom: 2px solid #ddd;
-}
-
-.user-list .table td {
-  color: #444;
-}
-
-.user-list .d-flex {
-  margin-bottom: 15px;
-}
-
-/* ===== Style for the Show Users button to match Add User width ===== */
-.auth-button-secondary {
-  background: linear-gradient(to right, #00b09b, #96c93d) !important;
-  border: none !important;
-  border-radius: 12px !important;
-  padding: 10px 24px !important;
-  color: #fff !important;
-  font-weight: 600;
-  font-size: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-  width: 250px;
-}
-
-.auth-button-secondary:hover {
-  background: linear-gradient(to right, #019c89, #84b630) !important;
-  transform: scale(1.03);
-}
-
-/* ===== Increase width for the user list view ===== */
 .auth-box.show-users-view {
-  width: 800px;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .auth-box {
+    padding: 30px;
+    margin: 15px;
+  }
+
+  .auth-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .auth-input-group .form-control {
+    font-size: 16px;
+    height: 45px;
+    padding: 12px 15px;
+    width: 100%;
+  }
+
+  .auth-button,
+  .auth-button-secondary {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+  }
 }
